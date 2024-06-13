@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "LXgzblIoNYg=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\morga\\OneDrive\\Documents\\College\\Unit 16\\U16A2\\BookSortProgram\\BookSorter\\BookSorter.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\morga\\.nuget\\packages\\csvhelper\\32.0.3\\csvhelper.32.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
