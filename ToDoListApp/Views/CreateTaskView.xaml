@@ -1,0 +1,89 @@
+﻿<Window x:Class="ToDoApplication.Views.CreateTaskView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoApplication.Views"
+        mc:Ignorable="d"
+        Title="CreateTaskView" Height="450" Width="400">
+    <Grid Grid.IsSharedSizeScope="True" Margin="20 0 20 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Text="Create Task" 
+                   FontSize="24"
+                   Margin="0 10 0 0"/>
+
+        <Grid Grid.Row="1" Margin="0 30 0 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" 
+					   Text="Description" />
+            <TextBox Grid.Row="1" 
+					 Text="{Binding Description}" 
+					 Margin="0 5 0 0" />
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="0 20 0 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" SharedSizeGroup="FirstColumn"/>
+                <ColumnDefinition Width="auto" SharedSizeGroup="SecondColumn"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="0"
+                       Text="Title" />
+            <TextBox Grid.Row="1" 
+                     Grid.Column="0"
+                     Text="{Binding Title}" 
+                     Margin="0 5 0 0" />
+
+        </Grid>
+
+        <Grid Grid.Row="3" Margin="0 20 0 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" SharedSizeGroup="FirstColumn"/>
+                <ColumnDefinition Width="auto" SharedSizeGroup="SecondColumn"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="0"
+                       Text="Start Date" />
+            <DatePicker Grid.Row="1"
+                        Name="StartPicker"
+                     Grid.Column="0"
+                     SelectedDate="{Binding StartDate}"
+                     Margin="0 5 0 0" />
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="1"
+                       Margin="10 0 0 0"
+                       Text="End Date" />
+            <DatePicker Grid.Row="1" 
+                        Grid.Column="1"
+                        SelectedDate="{Binding EndDate}"
+                        Margin="10 5 0 0" />
+        </Grid>
+
+        <StackPanel Grid.Row="4" Margin="0 50 0 0" Orientation="Horizontal">
+            <Button Content="Submit" Command="{Binding AddTaskCommand}" Padding="5"/>
+        </StackPanel>
+    </Grid>
+</Window>
